@@ -6,11 +6,11 @@ import Button from '../UI/Button/Button';
 
 const emailReducer = (state, action) => {
   console.log(action.type)
-  if (action.type === 'USER_INPUT') {
+  if (action.type === 'USER_INPUT') { // dispatch로 불러온 값
     return { value: action.val, isValid: action.val.includes('@') };
   }
 
-  if (action.type === 'INPUT_BLUR') {
+  if (action.type === 'INPUT_BLUR') { // 가장 최신 값은 state로 불러온다.
     return { value: state.value, isValid: state.value.includes('@') };
   }
 
